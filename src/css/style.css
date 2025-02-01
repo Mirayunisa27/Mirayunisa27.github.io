@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-}
+  scroll-behavior: smooth;
+} 
 
 body {
   background-color: #d3b4cc;
@@ -30,6 +31,9 @@ body {
   display: flex;
   list-style-type: none;
   gap: 1rem;
+}
+.navbar-container span{
+  display: none;
 }
 
 .navbar-container .navbar-nav li a {
@@ -141,10 +145,10 @@ body {
 }
 
 .contact-container form button{
-  background-color: #d85abf;
+  background-color: #d3b4cc;
   padding: 0.5rem 0;
   margin-bottom: 1rem;
-  border: solid 1px #d85abf;
+  border: solid 1px #d3b4cc;
   border-radius: 10px;
   transition: all;
   transition-duration: 0.3s;
@@ -157,9 +161,78 @@ body {
 }
 
 footer{
-  height: 60vh;
+  background-color: #d85abf;
+  color: #fff;
+  text-align: center;
+  
 }
 
 footer p{
   text-align: center;
+  padding-bottom: 1rem;
+}
+
+footer p a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* tablet */
+@media (max-width : 768px){
+  html{
+    font-size: 93%;
+  }
+
+.about-container .about-wrapper{
+  padding: 1rem 3rem;
+  gap: 1.5rem;
+  text-align: justify;
+}
+.about-container form{
+  width: 60%;
+}
+}
+
+.navbar-container{
+padding: 1.5rem;
+}
+
+/* mobile */
+@media(max-width: 576px){
+  .navbar-container span{
+    display: flex;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  .navbar-container .navbar-nav{
+    position: absolute;
+    flex-direction: column;
+    right: -100%;
+    top: 100%;
+    background-color: #d85abf;
+    width: 20rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .navbar-container .navbar-nav.active{
+    right: 0;
+  }
+
+  .navbar-container .navbar-nav li a{
+    display: block;
+    color: white;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    transition: all ease-in-out 0.2s;
+  }
+
+  .navbar-container .navbar-nav li a:hover{
+    background-color: white;
+    color: #d85abf;
+    text-decoration: none;
+  }
 }
